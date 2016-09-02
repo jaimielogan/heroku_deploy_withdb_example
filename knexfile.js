@@ -1,4 +1,5 @@
 // Update with your config settings.
+require('dotenv').config();
 
 module.exports = {
 
@@ -26,7 +27,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: process.env.DATABASE_URL + '?sslmode=require',
     connection: {
       database: 'my_db',
       user:     'username',
